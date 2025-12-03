@@ -1,9 +1,9 @@
 "use client";
 
 import { TrendingUp, Award, Code2 } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { cn } from "@/lib/utils";
 
@@ -159,13 +159,17 @@ export function HeroSectionImproved() {
                 e.currentTarget.style.transform = "perspective(1000px) rotateY(-5deg)";
               }}
             >
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXIlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY0NDk4MDk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Professional workspace"
-                fill
-                className="object-cover"
-                priority
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src="/evilis_developer.png"
+                  alt="Evilis Gomes - Desenvolvedor"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  unoptimized
+                />
+              </div>
 
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-[rgba(91,134,229,0.25)] to-[rgba(137,176,174,0.25)] mix-blend-multiply" />
