@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { HeroSectionImproved } from "@/components/HeroSectionImproved";
+import { ProjectsSectionImproved } from "@/components/ProjectsSectionImproved";
 
 export default function Home() {
   return (
@@ -7,9 +8,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSectionImproved />
-        <section id="projetos" className="min-h-screen">
-          {/* ProjectsSectionImproved será adicionado aqui */}
-        </section>
+        <ProjectsSectionImproved />
         <section id="sobre" className="min-h-screen">
           {/* AboutSectionDark será adicionado aqui */}
         </section>
