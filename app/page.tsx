@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { HeroSectionImproved } from "@/components/HeroSectionImproved";
 import { ProjectsSectionImproved } from "@/components/ProjectsSectionImproved";
+import { TechStackSectionDark } from "@/components/TechStackSectionDark";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSectionImproved />
         <ProjectsSectionImproved />
+        <TechStackSectionDark />
         <section id="sobre" className="min-h-screen">
           {/* AboutSectionDark será adicionado aqui */}
         </section>
