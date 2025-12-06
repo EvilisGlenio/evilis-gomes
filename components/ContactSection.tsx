@@ -68,7 +68,7 @@ export function ContactSection() {
                 isDark ? "text-white" : "text-[#212529]"
               )}
             >
-              Vamos conversar?
+              Tem um desafio para mim?
             </h2>
 
             <p
@@ -77,8 +77,7 @@ export function ContactSection() {
                 isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
               )}
             >
-              Estou sempre aberto a discutir novos projetos, ideias criativas ou
-              oportunidades para fazer parte da sua visão.
+              Estou pronto para colaborar em projetos que exigem dedicação técnica e visão moderna. Vamos construir algo incrível juntos.
             </p>
 
             {/* Contact Info */}

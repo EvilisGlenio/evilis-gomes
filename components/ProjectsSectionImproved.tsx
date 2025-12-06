@@ -28,8 +28,8 @@ const projects: Project[] = [
   {
     title: "Nascente",
     description:
-      "Aplicação de controle financeiro pessoal com dashboards analíticos interativos e visualização de dados em tempo real.",
-    tags: ["Next.js", "MUI", "Prisma", "TypeScript"],
+      "Aplicação de Inteligência Financeira - Painel analítico para controle financeiro pessoal, focado em visualização de dados intuitiva e performance.",
+    tags: ["Next.js", "MUI", "TypeScript"],
     image:
       "https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXB0b3AlMjBkYXNoYm9hcmQlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY0NDYwMDIwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     results: [
@@ -40,8 +40,8 @@ const projects: Project[] = [
   {
     title: "AGRO COE",
     description:
-      "Sistema de gestão pecuária focado no cálculo de Custo Operacional Efetivo com arquitetura DDD e práticas de Clean Code.",
-    tags: ["DDD", "Clean Arch", "PostgreSQL", "React"],
+      "Gestão Pecuária de Alta Precisão - Sistema focado no cálculo de Custo Operacional Efetivo, traduzindo regras de negócio complexas em uma interface simples.",
+    tags: ["React", "Clean Architecture", "PostgreSQL"],
     image:
       "https://images.unsplash.com/photo-1761839257144-297ce252742e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhZ3JpY3VsdHVyZSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzY0NTE0NzIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     results: [
@@ -79,7 +79,7 @@ export function ProjectsSectionImproved() {
               isDark ? "text-white" : "text-[#212529]"
             )}
           >
-            Projetos Selecionados
+            Projetos em Destaque
           </h2>
 
           <p
@@ -88,8 +88,7 @@ export function ProjectsSectionImproved() {
               isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
             )}
           >
-            Soluções reais que entreguei para clientes e empresas, com impacto
-            mensurável nos resultados de negócio.
+            Soluções desenhadas para resolver problemas reais com arquitetura limpa e tecnologias de ponta.
           </p>
 
           <div className="mx-auto mt-6 h-1 w-20 bg-[#5B86E5] rounded-sm" />
@@ -136,7 +135,7 @@ export function ProjectsSectionImproved() {
                     index === 0 ? "text-[#5B86E5]" : "text-[#89B0AE]"
                   )}
                 >
-                  {index === 0 ? "Web App" : "Enterprise"}
+                  Em Desenvolvimento
                 </div>
               </div>
 
@@ -227,6 +226,41 @@ export function ProjectsSectionImproved() {
           ))}
         </div>
 
+        {/* Corporate Experience Section */}
+        <div
+          className={cn(
+            "mt-16 rounded-2xl p-8 border",
+            isDark
+              ? "bg-[#1a1a1a] border-[#2d2d2d]"
+              : "bg-[#F8F9FA] border-[#E9ECEF]"
+          )}
+        >
+          <h3
+            className={cn(
+              "mb-4 text-2xl font-bold",
+              isDark ? "text-white" : "text-[#212529]"
+            )}
+          >
+            Experiência Corporativa (Confidencial)
+          </h3>
+          <p
+            className={cn(
+              "mb-4 text-lg leading-relaxed",
+              isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
+            )}
+          >
+            Atuação em Projetos Enterprise
+          </p>
+          <p
+            className={cn(
+              "text-base leading-relaxed",
+              isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
+            )}
+          >
+            Participei ativamente do desenvolvimento de 5+ projetos internos focados em soluções corporativas, garantindo escalabilidade e manutenibilidade. (Detalhes protegidos por NDA)
+          </p>
+        </div>
+
         {/* View All Projects Link */}
         <div className="mt-12 text-center">
           <Button
@@ -239,7 +273,7 @@ export function ProjectsSectionImproved() {
                 : "border-[#E9ECEF] text-[#495057] hover:border-[#5B86E5] hover:text-[#5B86E5] hover:bg-[rgba(91,134,229,0.03)]"
             )}
           >
-            Ver todos os projetos
+            Ver Repositórios no GitHub
           </Button>
         </div>
       </div>
