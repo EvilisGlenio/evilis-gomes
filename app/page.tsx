@@ -3,6 +3,7 @@ import { HeroSectionImproved } from "@/components/HeroSectionImproved";
 import { ProjectsSectionImproved } from "@/components/ProjectsSectionImproved";
 import { TechStackSectionDark } from "@/components/TechStackSectionDark";
 import { AboutSectionDark } from "@/components/AboutSectionDark";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           {/* ContactSectionDark será adicionado aqui */}
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
