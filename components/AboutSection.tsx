@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, Layers, Users, LucideIcon } from "lucide-react";
+import { Code2, TrendingUp, Target, LucideIcon } from "lucide-react";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { cn } from "@/lib/utils";
 
@@ -13,21 +13,21 @@ interface Skill {
 const skills: Skill[] = [
   {
     icon: Code2,
-    title: "Clean Code",
+    title: "Foco em Qualidade",
     description:
-      "Código limpo, legível e manutenível seguindo as melhores práticas da indústria.",
+      "Código legível pensado para humanos, não apenas para máquinas.",
   },
   {
-    icon: Layers,
-    title: "Architecture",
+    icon: TrendingUp,
+    title: "Aprendizado Acelerado",
     description:
-      "Arquiteturas escaláveis com Domain-Driven Design e separação de responsabilidades.",
+      "Evolução constante através de cursos e prática diária.",
   },
   {
-    icon: Users,
-    title: "UX Focus",
+    icon: Target,
+    title: "Visão de Produto",
     description:
-      "Interfaces intuitivas que colocam a experiência do usuário em primeiro lugar.",
+      "Entendo o código como uma ferramenta para alavancar negócios.",
   },
 ];
 
@@ -52,7 +52,7 @@ export function AboutSection() {
                 isDark ? "text-white" : "text-[#212529]"
               )}
             >
-              Sobre Mim
+              Mais que código, soluções.
             </h2>
 
             <p
@@ -61,8 +61,7 @@ export function AboutSection() {
                 isDark ? "text-[#b0b0b0]" : "text-[#495057]"
               )}
             >
-              Olá, sou um <strong>Desenvolvedor Front-End</strong> apaixonado
-              por transformar ideias complexas em interfaces funcionais.
+              Olá, sou <strong>Evilis Gomes</strong>. Minha jornada na tecnologia começou em 2023 e, desde então, mergulhei fundo no ecossistema JavaScript/TypeScript.
             </p>
             <p
               className={cn(
@@ -70,11 +69,7 @@ export function AboutSection() {
                 isDark ? "text-[#b0b0b0]" : "text-[#495057]"
               )}
             >
-              Em projetos como{" "}
-              <strong className="text-[#5B86E5]">Nascente</strong> e{" "}
-              <strong className="text-[#5B86E5]">AGRO COE</strong>, foco na
-              aplicação de princípios como Clean Code e Domain-Driven Design
-              (DDD) para garantir manutenibilidade.
+              Atualmente, atuo como <strong>Desenvolvedor Full-Stack</strong>, onde combino a criatividade do Front-end com a lógica estruturada do Back-end. Não acredito apenas em escrever linhas de código, mas em criar arquiteturas que facilitem a vida do usuário e o crescimento do negócio.
             </p>
             <p
               className={cn(
@@ -82,9 +77,7 @@ export function AboutSection() {
                 isDark ? "text-[#b0b0b0]" : "text-[#495057]"
               )}
             >
-              Meu objetivo é criar produtos digitais que não apenas funcionam
-              perfeitamente, mas que também proporcionam experiências
-              memoráveis aos usuários.
+              Nos meus projetos atuais, como o <strong className="text-[#5B86E5]">Nascente</strong> e o <strong className="text-[#5B86E5]">AGRO COE</strong>, aplico rigorosamente princípios de Clean Code e Arquitetura Limpa, garantindo que o software cresça saudável e sustentável. Estou sempre buscando o próximo nível de desafio.
             </p>
           </div>
 

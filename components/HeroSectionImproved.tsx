@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { cn } from "@/lib/utils";
+import { useMemo } from "react";
 
 export function HeroSectionImproved() {
   const { isDark } = useDarkMode();
@@ -24,10 +25,20 @@ export function HeroSectionImproved() {
     }
   };
 
+  // Calcula os anos de imersão e prática contínua dinamicamente desde 2023
+  const yearsOfExperience = useMemo(() => {
+    const startDate = new Date(2023, 0, 1); // 01/01/2023 (mês é 0-indexed, então 0 = janeiro)
+    const currentDate = new Date();
+    const diffTime = currentDate.getTime() - startDate.getTime();
+    const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25); // Considera anos bissextos
+    const years = Math.max(0, Math.floor(diffYears)); // Garante que não seja negativo
+    return `${years}+`;
+  }, []);
+
   const stats = [
-    { icon: TrendingUp, value: "5+", label: "Anos de Experiência" },
-    { icon: Code2, value: "20+", label: "Projetos Entregues" },
-    { icon: Award, value: "15+", label: "Tecnologias Dominadas" },
+    { icon: TrendingUp, value: yearsOfExperience, label: "Anos de Imersão e Prática Contínua" },
+    { icon: Code2, value: "7+", label: "Projetos Desenvolvidos" },
+    { icon: Award, value: "Full-Stack", label: "Visão completa do Front ao Back-end" },
   ];
 
   return (
@@ -69,8 +80,7 @@ export function HeroSectionImproved() {
                 isDark ? "text-white" : "text-[#212529]"
               )}
             >
-              Desenvolvedor Front-End especializado em construir aplicações web
-              modernas e escaláveis com Next.js e Material UI.
+              Desenvolvedor Full-Stack focado em transformar ideias em softwares de alto valor.
             </h1>
 
             <h2
@@ -79,8 +89,7 @@ export function HeroSectionImproved() {
                 isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
               )}
             >
-              Construo soluções que resolvem problemas de negócio, com foco em
-              Clean Architecture e UX.
+              Especialista em construir aplicações web modernas com Next.js, NestJS e Material UI. Combinando performance técnica com uma visão orientada a negócios.
             </h2>
 
             {/* CTA Buttons */}
@@ -90,7 +99,7 @@ export function HeroSectionImproved() {
                 onClick={scrollToProjects}
                 className="bg-[#5B86E5] px-8 py-6 text-lg text-white shadow-[0_4px_14px_rgba(91,134,229,0.25)] transition-all duration-300 hover:bg-[#4a6bc4] hover:shadow-[0_6px_20px_rgba(91,134,229,0.35)] hover:-translate-y-0.5"
               >
-                Veja meus projetos
+                Ver Meu Trabalho
               </Button>
 
               <Button
@@ -99,7 +108,7 @@ export function HeroSectionImproved() {
                 onClick={scrollToContact}
                 className="border-[#5B86E5] px-8 py-6 text-lg text-[#5B86E5] transition-all duration-300 hover:border-[#4a6bc4] hover:bg-[rgba(91,134,229,0.05)] hover:-translate-y-0.5"
               >
-                Entre em contato
+                Vamos Conversar
               </Button>
             </div>
 

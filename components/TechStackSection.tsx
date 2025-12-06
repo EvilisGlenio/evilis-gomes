@@ -42,7 +42,7 @@ const techStack: TechCategory[] = [
     icon: Database,
     color: "#5B86E5",
     bgColor: "rgba(91, 134, 229, 0.1)",
-    technologies: ["Node.js", "Prisma", "PostgreSQL", "REST APIs"],
+    technologies: ["Node.js", "PostgreSQL", "REST APIs"],
   },
 //   {
 //     category: "Arquitetura",
@@ -66,11 +66,11 @@ const techStack: TechCategory[] = [
 //     technologies: ["React Native", "PWA", "Responsive Design", "Mobile-First"],
 //   },
   {
-    category: "Versionamento",
+    category: "Qualidade & Versionamento",
     icon: GitBranch,
     color: "#5B86E5",
     bgColor: "rgba(91, 134, 229, 0.1)",
-    technologies: ["Git", "GitHub", "GitFlow", "Code Review"],
+    technologies: ["Git", "GitHub", "Code Review", "Clean Code"],
   },
 //   {
 //     category: "Testes",
@@ -100,7 +100,7 @@ export function TechStackSection() {
               isDark ? "text-white" : "text-[#212529]"
             )}
           >
-            Stack Tecnológico
+            Arsenal Tecnológico
           </h2>
           <p
             className={cn(
@@ -108,8 +108,7 @@ export function TechStackSection() {
               isDark ? "text-[#b0b0b0]" : "text-[#6C757D]"
             )}
           >
-            Ferramentas e tecnologias que domino para entregar soluções robustas
-            e escaláveis.
+            Ferramentas modernas que utilizo para criar aplicações rápidas e seguras.
           </p>
           <div className="mx-auto mt-6 h-1 w-20 bg-[#5B86E5] rounded-sm" />
         </div>
