@@ -14,6 +14,8 @@ export function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Cleanup timeout on unmount
@@ -25,20 +27,47 @@ export function ContactSection() {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
+
     // Clear any existing timeout before creating a new one
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    timeoutRef.current = setTimeout(() => {
-      setSubmitted(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erro ao enviar mensagem");
+      }
+
+      // Sucesso
+      setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
-      timeoutRef.current = null;
-    }, 3000);
+      timeoutRef.current = setTimeout(() => {
+        setSubmitted(false);
+        timeoutRef.current = null;
+      }, 5000);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Erro ao enviar mensagem. Tente novamente mais tarde."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -263,15 +292,30 @@ export function ContactSection() {
                 />
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <div
+                  className={cn(
+                    "mb-6 p-4 rounded-lg border",
+                    "bg-red-50 border-red-200 text-red-800",
+                    isDark && "bg-red-900/20 border-red-800 text-red-300"
+                  )}
+                >
+                  <p className="m-0 text-sm font-medium">{error}</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={submitted || loading}
                 className={cn(
                   "w-full md:w-auto px-8 py-3 rounded-lg font-medium text-base transition-all duration-300",
                   "flex items-center justify-center gap-2",
                   "shadow-lg hover:shadow-xl",
                   submitted
                     ? "bg-[#10B981] text-white cursor-not-allowed"
+                    : loading
+                    ? "bg-[#6C757D] text-white cursor-wait"
                     : "bg-[#5B86E5] text-white hover:bg-[#4a6bc4]",
                   "disabled:opacity-100"
                 )}
@@ -280,6 +324,11 @@ export function ContactSection() {
                   <>
                     <span>✓</span>
                     <span>Mensagem Enviada!</span>
+                  </>
+                ) : loading ? (
+                  <>
+                    <span className="animate-spin">⏳</span>
+                    <span>Enviando...</span>
                   </>
                 ) : (
                   <>
