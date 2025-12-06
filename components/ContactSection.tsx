@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { cn } from "@/lib/utils";
 
@@ -14,15 +14,30 @@ export function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Clear any existing timeout before creating a new one
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     // Handle form submission
     console.log("Form submitted:", formData);
     setSubmitted(true);
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setSubmitted(false);
       setFormData({ name: "", email: "", message: "" });
+      timeoutRef.current = null;
     }, 3000);
   };
 
