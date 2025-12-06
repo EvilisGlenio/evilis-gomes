@@ -100,14 +100,15 @@ export function ContactSection() {
                   >
                     Email
                   </p>
-                  <p
+                  <a
+                    href="mailto:glenio.developer@gmail.com"
                     className={cn(
-                      "m-0 font-medium",
+                      "m-0 font-medium hover:text-[#5B86E5] transition-colors",
                       isDark ? "text-white" : "text-[#212529]"
                     )}
                   >
-                    seu.email@exemplo.com
-                  </p>
+                    glenio.developer@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -123,7 +124,10 @@ export function ContactSection() {
                 Me encontre também nas redes:
               </p>
               <div className="flex gap-2">
-                <button
+                <a
+                  href="https://github.com/EvilisGlenio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "w-12 h-12 rounded-lg border flex items-center justify-center transition-all duration-300",
                     "hover:bg-[#5B86E5] hover:border-[#5B86E5]",
@@ -139,8 +143,11 @@ export function ContactSection() {
                     color={isDark ? "#b0b0b0" : "#212529"}
                     className="transition-colors"
                   />
-                </button>
-                <button
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/evilis-glenio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "w-12 h-12 rounded-lg border flex items-center justify-center transition-all duration-300",
                     "hover:bg-[#5B86E5] hover:border-[#5B86E5]",
@@ -156,7 +163,7 @@ export function ContactSection() {
                     color={isDark ? "#b0b0b0" : "#212529"}
                     className="transition-colors"
                   />
-                </button>
+                </a>
               </div>
             </div>
           </div>

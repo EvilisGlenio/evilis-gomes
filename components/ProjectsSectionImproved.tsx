@@ -266,6 +266,7 @@ export function ProjectsSectionImproved() {
           <Button
             variant="outline"
             size="lg"
+            asChild
             className={cn(
               "px-8 py-6 transition-colors duration-300",
               isDark
@@ -273,7 +274,15 @@ export function ProjectsSectionImproved() {
                 : "border-[#E9ECEF] text-[#495057] hover:border-[#5B86E5] hover:text-[#5B86E5] hover:bg-[rgba(91,134,229,0.03)]"
             )}
           >
-            Ver Repositórios no GitHub
+            <a
+              href="https://github.com/EvilisGlenio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              Ver Repositórios no GitHub
+              <ExternalLink size={16} />
+            </a>
           </Button>
         </div>
       </div>
